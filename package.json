@@ -1,0 +1,44 @@
+{
+  "name": "accredcan-angularjs-permissions",
+  "version": "0.1.0",
+  "description": "AngularJS directive for Accreditation Canada website application permissions module.",
+  "main": [
+    "build/accredcan-permissions.js"
+  ],
+  "scripts": {
+    "prestart": "npm update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/accredcan/angularjs-permissions.git"
+  },
+  "keywords": [
+    "accredcan",
+    "accreditation",
+    "canada",
+    "angularjs",
+    "permissions"
+  ],
+  "author": "Accreditation Canada",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.0",
+    "gulp-add-src": "^0.2.0",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-jsvalidate": "^2.0.0",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-template": "^3.0.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.7",
+    "less-plugin-autoprefix": "^1.5.1",
+    "main-bower-files": "^2.11.1"
+  }
+}

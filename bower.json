@@ -1,0 +1,32 @@
+{
+  "name": "accredcan-angularjs-permissions",
+  "description": "AngularJS directive for Accreditation Canada website application permissions module.",
+  "main": [
+    "build/app.js"
+  ],
+  "authors": [
+    "Accreditation Canada"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "accredcan",
+    "accreditation",
+    "canada",
+    "angularjs",
+    "permissions"
+  ],
+  "moduleType": [],
+  "homepage": "https://github.com/accredcan/angularjs-permissions",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "angular": "^1.4.0"
+  }
+}

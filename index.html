@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+	<head>
+		<title>AccredCan AngularJS Permissions</title>
+		<style>
+			body > *:not(script) {
+				border: 1px solid grey;
+				display: block;
+				height: 50px;
+				padding: 20px;
+				margin: 20px;
+			} 
+		</style>
+	</head>
+	<body>
+		
+		<!-- Application Directive Testing -->
+		<h1>Accredcan Permissions Directive and Service</h1>
+		
+		<p data-accredcan-permissions='["read"]'>I have read permissions</p>
+		
+		<input type="text" data-accredcan-permissions='["write"]' value="I have write permissions">
+		
+		<button data-accredcan-permissions='["execute"]'>I have execute permissions</button>
+		
+		<textarea data-accredcan-permissions='["read", "write"]'>I have read and write permissions</textarea>
+		
+		<!-- Application Third-Party JavaScript -->
+        <script src="build/library.js"></script>
+
+        <!-- Application JavaScript -->
+		<script src="build/app.js"></script>
+		
+		<!-- Application Testing -->
+		<script>
+			
+			/* 
+				this is here solely for an example of how to set permissions
+				this should be done within an account services or something of the like
+				whenever it is chaged, a accredcanPermissionsSet event is fired and the 
+				dom is is updated 
+			*/
+			
+			angular.module('app', ['accredcan.permissions'])
+				.run(RunServiceTest);
+				
+			RunServiceTest.$inject = ['accredcanPermissions'];
+				
+			function RunServiceTest(accredcanPermissions) {
+				// change these to see what happens when you change permissions
+				accredcanPermissions.setPermissions([
+					'read',
+					'write',
+					'execute']);
+			}
+		
+		</script>
+	</body>
+</html>
