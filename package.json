@@ -1,6 +1,6 @@
 {
   "name": "accredcan-angularjs-permissions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AngularJS directive for Accreditation Canada website application permissions module.",
   "main": [
     "build/accredcan-permissions.js"

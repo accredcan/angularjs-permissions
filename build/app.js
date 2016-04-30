@@ -33,7 +33,7 @@
 			
 			// if permissions met condition, hide element 
 			// otherwise, show it
-			if (accredcanPermissions.hasPermission(JSON.parse(_permissions)) == _reverse) {
+			if (accredcanPermissions.has(JSON.parse(_permissions)) == _reverse) {
 				element.hide();
 			} else {
 				element.show();
@@ -41,7 +41,7 @@
 			
 			// bind event when new permissions set within service
 			var unbind = scope.$on('accredcanPermissionsSet', function () {
-				if (accredcanPermissions.hasPermission(JSON.parse(_permissions)) == _permissions) {
+				if (accredcanPermissions.has(JSON.parse(_permissions)) == _permissions) {
 					element.hide();
 				} else {
 					element.show();
@@ -96,9 +96,9 @@
         var _permissions = [];
 
         // methods
-        this.getPermissions = GetPermissions;
-        this.setPermissions = SetPermissions;
-        this.hasPermission = HasPermission;
+        this.get = GetPermissions;
+        this.set = SetPermissions;
+        this.has = HasPermission;
 
         // get list of accepted permissions
         function GetPermissions() {

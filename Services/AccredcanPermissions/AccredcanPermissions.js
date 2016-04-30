@@ -15,9 +15,9 @@
         var _permissions = [];
 
         // methods
-        this.getPermissions = GetPermissions;
-        this.setPermissions = SetPermissions;
-        this.hasPermission = HasPermission;
+        this.get = GetPermissions;
+        this.set = SetPermissions;
+        this.has = HasPermission;
 
         // get list of accepted permissions
         function GetPermissions() {
