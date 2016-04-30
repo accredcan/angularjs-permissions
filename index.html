@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Accreditation Canada AngularJS Permissions by accredcan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Accreditation Canada AngularJS Permissions</h1>
+      <h2 class="project-tagline">AngularJS directive for Accreditation Canada website application permissions module.</h2>
+      <a href="https://github.com/accredcan/angularjs-permissions" class="btn">View on GitHub</a>
+      <a href="https://github.com/accredcan/angularjs-permissions/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/accredcan/angularjs-permissions/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="accreditation-canada-angularjs-permissions" class="anchor" href="#accreditation-canada-angularjs-permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accreditation Canada AngularJS Permissions</h1>
+
+<p><a href="https://angularjs.org">AngularJS</a> directive for <a href="https://accreditation.ca">Accreditation Canada</a> website application permissions module.</p>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<ul>
+<li>
+<a href="#getting-started">Getting Started</a>
+
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#how-to-use">How to Use</a></li>
+</ul>
+</li>
+<li>
+<a href="#contributing">Contributing</a>
+
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#directory-layout">Directory Layout</a></li>
+</ul>
+</li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<p>You can use <a href="http://bower.io">bower</a> or <a href="https://www.npmjs.com">npm</a> to install into your <a href="https://angularjs.org">AngularJS</a> application.</p>
+
+<pre><code>bower install accredcan-angularjs-permissions
+</code></pre>
+
+<p>OR</p>
+
+<pre><code>npm install accredcan-angularjs-permissions
+</code></pre>
+
+<h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use</h3>
+
+<p>You can use the attributes <code>accredcan-permissions</code> and <code>accredcan-permissions-reverse</code> on any HTML element to show/hide elements based on set permissions.</p>
+
+<div class="highlight highlight-text-html-basic"><pre><span class="pl-c">&lt;!-- use accredcan-permissions to specifiy what permissions are required --&gt;</span>
+&lt;<span class="pl-ent">button</span> <span class="pl-e">accredcan-permissions</span>=<span class="pl-s"><span class="pl-pds">'</span>["admin"]<span class="pl-pds">'</span></span>&gt;Admin User&lt;/<span class="pl-ent">button</span>&gt;
+
+<span class="pl-c">&lt;!-- include accredcan-permissions-reverse to reverse logic --&gt;</span>
+&lt;<span class="pl-ent">button</span> <span class="pl-e">accredcan-permissions</span>=<span class="pl-s"><span class="pl-pds">'</span>["admin"]<span class="pl-pds">'</span></span> <span class="pl-e">accredcan-permissions-reverse</span>&gt;Not Admin User&lt;/<span class="pl-ent">button</span>&gt;</pre></div>
+
+<p>You can use the <code>accredcanPermissions</code> service with the methods <code>set</code>, <code>get</code> and <code>has</code> permission(s).</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// set user permissions</span>
+<span class="pl-smi">accredcanPermissions</span>.<span class="pl-en">set</span>([<span class="pl-s"><span class="pl-pds">"</span>user<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>admin<span class="pl-pds">"</span></span>]);
+
+<span class="pl-c">// get user permissions</span>
+<span class="pl-k">var</span> array <span class="pl-k">=</span> <span class="pl-smi">accredcanPermissions</span>.<span class="pl-en">get</span>();
+
+<span class="pl-c">// has user permissions</span>
+<span class="pl-k">if</span> (<span class="pl-smi">accredcanPermissions</span>.<span class="pl-en">has</span>([<span class="pl-s"><span class="pl-pds">"</span>admin<span class="pl-pds">"</span></span>])
+  <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+<span class="pl-k">else</span> 
+  <span class="pl-k">return</span> <span class="pl-c1">false</span>;</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<h3>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<p>You will need <a href="https://git-scm.com">git</a> to clone the template repository. We also use a number of <a href="https://nodejs.org/">node.js</a> tools for development. You must have <a href="https://nodejs.org/">node.js</a> and its package manager <a href="https://www.npmjs.com">npm</a> installed.</p>
+
+<p>It is also recommended that you install <a href="http://bower.io">bower</a> and [gulp] globally using <a href="https://www.npmjs.com">npm</a></p>
+
+<pre><code>npm install bower gulp -g
+</code></pre>
+
+<h3>
+<a id="directory-layout" class="anchor" href="#directory-layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Directory Layout</h3>
+
+<pre><code>Directives/           --&gt; app directive source code
+Library/              --&gt; app library source code (only Library.js included in app build)
+Services/             --&gt; app service source code
+app.js                --&gt; app main module source code (use as starting point)
+bower.json            --&gt; dependency package manager
+gulpfile.js           --&gt; build task manager
+index.html            --&gt; example code (turn into gh-pages)
+LICENSE               --&gt; MIT license information
+package.json          --&gt; development package manager
+README.md             --&gt; documentation
+</code></pre>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>For more information on Accreditation Canada, check out <a href="https://accreditation.ca/">https://accreditation.ca/</a>. For more information on AngularJS please check out <a href="http://angularjs.org/">http://angularjs.org/</a>. For more information on jQuery, check out <a href="https://jquery.com/">https://jquery.com/</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/accredcan/angularjs-permissions">Accreditation Canada AngularJS Permissions</a> is maintained by <a href="https://github.com/accredcan">accredcan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
